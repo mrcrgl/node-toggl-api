@@ -12,6 +12,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-mocha-istanbul');
     grunt.loadNpmTasks('grunt-istanbul');
     grunt.loadNpmTasks('grunt-apimocker');
+    grunt.loadNpmTasks('grunt-coveralls');
 
     var fileList = ['lib/**/*.js', 'test/**/*.js'];
 
@@ -89,6 +90,13 @@ module.exports = function(grunt) {
             }
         },
 
+        coveralls: {
+            options: {
+                // LCOV coverage file relevant to every target
+                src: 'coverage/reports/lcov.info'
+            }
+        },
+
         jshint: {
             options: {
                 reporter: require('jshint-stylish'),
@@ -131,7 +139,6 @@ module.exports = function(grunt) {
         'jshint', 'apimocker', 'mochaTest:integration'
     ]);
 
-    grunt.registerTask('coveralls', ['mocha_istanbul:coveralls']);
     grunt.registerTask('coverage', ['jshint', 'env:coverage', 'apimocker', 'mocha_istanbul:coverage',
-        'makeReport']);
+        'makeReport', 'coveralls']);
 };

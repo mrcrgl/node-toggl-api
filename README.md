@@ -2,6 +2,7 @@ toggl-api
 ==========
 
 [![Coverage Status](https://coveralls.io/repos/mrcrgl/node-toggl-api/badge.svg)](https://coveralls.io/r/mrcrgl/node-toggl-api)
+[![Build Status](https://travis-ci.org/mrcrgl/node-toggl-api.svg)](https://travis-ci.org/mrcrgl/node-toggl-api)
 
 [Toggl](https://www.toggl.com/) API for Node.js. Library is based on official Toggl API [documentation](https://github.com/toggl/toggl_api_docs).
 

@@ -1,0 +1,123 @@
+{
+  "mockDirectory": "fixtures/mocks",
+  "quiet": true,
+  "port": "7878",
+  "latency": 10,
+  "allowedHeaders": [
+    "Content-Type"
+  ],
+  "webServices": {
+    "will-raise-500": {
+      "verbs": ["get"],
+      "responses": {
+        "get": {
+          "contentType": "application/json",
+          "mockFile": "500.json",
+          "httpStatus": 500
+        }
+      }
+    },
+    "api/v8/me": {
+      "verbs": ["get"],
+      "responses": {
+        "get": {
+          "contentType": "application/json",
+          "mockFile": "me.json",
+          "headers": {
+            "Set-Cookie": "toggl_api_session=MTM2MzA4MJa8jA3OHxEdi1CQkFFQ180SUFBUkFCRUFBQVlQLUNBQUVHYzNSeWFXNW5EQXdBQ25ObGMzTnBiMjVmYVdRR2MzUnlhVzVuREQ0QVBIUnZaMmRzTFdGd2FTMXpaWE56YVc5dUxUSXRaalU1WmpaalpEUTVOV1ZsTVRoaE1UaGhaalpqWkRkbU5XWTJNV0psWVRnd09EWmlPVEV3WkE9PXweAkG7kI6NBG-iqvhNn1MSDhkz2Pz_UYTzdBvZjCaA==; Path=/; Max-Age=86400; HttpOnly"
+          }
+        }
+      }
+    },
+    "api/v8/workspaces": {
+      "verbs": ["get"],
+      "responses": {
+        "get": {
+          "contentType": "application/json",
+          "mockFile": "workspaces.json"
+        }
+      }
+    },
+    "api/v8/workspaces/:wid": {
+      "verbs": ["get", "put"],
+      "responses": {
+        "get": {
+          "contentType": "application/json",
+          "mockFile": "workspace.json"
+        },
+        "put": {
+          "contentType": "application/json",
+          "mockFile": "workspace.json"
+        }
+      }
+    },
+    "api/v8/workspaces/:wid/tags": {
+      "verbs": ["get"],
+      "responses": {
+        "get": {
+          "contentType": "application/json",
+          "mockFile": "workspace-tags.json"
+        }
+      }
+    },
+    "api/v8/workspaces/:wid/tasks": {
+      "verbs": ["get"],
+      "responses": {
+        "get": {
+          "contentType": "application/json",
+          "mockFile": "workspace-tasks.json"
+        }
+      }
+    },
+    "api/v8/workspaces/:wid/users": {
+      "verbs": ["get"],
+      "responses": {
+        "get": {
+          "contentType": "application/json",
+          "mockFile": "workspace-users.json"
+        }
+      }
+    },
+    "api/v8/workspaces/:wid/projects": {
+      "verbs": ["get"],
+      "responses": {
+        "get": {
+          "contentType": "application/json",
+          "mockFile": "workspace-projects.json"
+        }
+      }
+    },
+    "api/v8/workspaces/:wid/invite": {
+      "verbs": ["post"],
+      "responses": {
+        "post": {
+          "contentType": "application/json",
+          "mockFile": "workspace-users-invite.json"
+        }
+      }
+    },
+    "api/v8/workspace_users": {
+      "verbs": ["get"],
+      "responses": {
+        "put": {
+          "contentType": "application/json",
+          "mockFile": "workspace_users.json"
+        }
+      }
+    },
+    "api/v8/workspace_users/:wuid": {
+      "verbs": ["put", "delete"],
+      "responses": {
+        "put": {
+          "contentType": "application/json",
+          "mockFile": "workspace_user.json"
+        },
+        "delete": {
+          "httpStatus": 200,
+          "contentType": "application/json",
+          "mockFile": "empty.json"
+        }
+      }
+    }
+  }
+}

@@ -18,7 +18,7 @@
       }
     },
     "api/v8/me": {
-      "verbs": ["get"],
+      "verbs": ["get", "put"],
       "responses": {
         "get": {
           "contentType": "application/json",
@@ -26,6 +26,19 @@
           "headers": {
             "Set-Cookie": "toggl_api_session=MTM2MzA4MJa8jA3OHxEdi1CQkFFQ180SUFBUkFCRUFBQVlQLUNBQUVHYzNSeWFXNW5EQXdBQ25ObGMzTnBiMjVmYVdRR2MzUnlhVzVuREQ0QVBIUnZaMmRzTFdGd2FTMXpaWE56YVc5dUxUSXRaalU1WmpaalpEUTVOV1ZsTVRoaE1UaGhaalpqWkRkbU5XWTJNV0psWVRnd09EWmlPVEV3WkE9PXweAkG7kI6NBG-iqvhNn1MSDhkz2Pz_UYTzdBvZjCaA==; Path=/; Max-Age=86400; HttpOnly"
           }
+        },
+        "put": {
+          "contentType": "application/json",
+          "mockFile": "me.json"
+        }
+      }
+    },
+    "api/v8/reset_token": {
+      "verbs": ["post"],
+      "responses": {
+        "post": {
+          "contentType": "application/json",
+          "mockFile": "empty.json"
         }
       }
     },
@@ -111,6 +124,73 @@
         "put": {
           "contentType": "application/json",
           "mockFile": "workspace_user.json"
+        },
+        "delete": {
+          "httpStatus": 200,
+          "contentType": "application/json",
+          "mockFile": "empty.json"
+        }
+      }
+    },
+    "api/v8/dashboard/:wid": {
+      "verbs": ["get"],
+      "responses": {
+        "get": {
+          "contentType": "application/json",
+          "mockFile": "dashboard.json"
+        }
+      }
+    },
+    "api/v8/time_entries": {
+      "verbs": ["get", "post"],
+      "responses": {
+        "get": {
+          "contentType": "application/json",
+          "mockFile": "time-entries.json"
+        },
+        "post": {
+          "contentType": "application/json",
+          "mockFile": "time-entry.json"
+        }
+      }
+    },
+    "api/v8/time_entries/start": {
+      "verbs": ["post"],
+      "responses": {
+        "post": {
+          "contentType": "application/json",
+          "mockFile": "time-entry.json"
+        }
+      }
+    },
+    "api/v8/time_entries/:teid/stop": {
+      "verbs": ["put"],
+      "responses": {
+        "put": {
+          "contentType": "application/json",
+          "mockFile": "time-entry.json"
+        }
+      }
+    },
+    "api/v8/time_entries/current": {
+      "verbs": ["get"],
+      "responses": {
+        "get": {
+          "contentType": "application/json",
+          "mockFile": "time-entry.json"
+        }
+      }
+    },
+    "api/v8/time_entries/:teid": {
+      "verbs": ["get", "put", "delete"],
+      "responses": {
+        "get": {
+          "contentType": "application/json",
+          "mockFile": "time-entry.json"
+        },
+        "put": {
+          "contentType": "application/json",
+          "mockFile": "time-entry.json"
         },
         "delete": {
           "httpStatus": 200,
